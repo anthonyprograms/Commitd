@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>BB73A1D0-DBFD-4E6B-B700-AE83EB75A7C9</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Commitd</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>2BFDEA47F86D5156EC544FAFB54F0DE7B5CC0A59</key>
 		<string>https://github.com/anthonyprograms/Commitd.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Commitd/Commitd.xcodeproj/project.xcworkspace</string>
+	<string>Commitd/Commitd.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2BFDEA47F86D5156EC544FAFB54F0DE7B5CC0A59</key>
