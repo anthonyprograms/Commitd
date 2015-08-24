@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92A2DEE61B8BDE5F008EE29C /* SportSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2DEE51B8BDE5F008EE29C /* SportSelectionViewController.swift */; };
 		92AA7BF61B88F027002736E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA7BF51B88F027002736E7 /* AppDelegate.swift */; };
 		92AA7BF91B88F027002736E7 /* Commitd.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92AA7BF71B88F027002736E7 /* Commitd.xcdatamodeld */; };
 		92AA7BFB1B88F027002736E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA7BFA1B88F027002736E7 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		92A2DEE51B8BDE5F008EE29C /* SportSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportSelectionViewController.swift; sourceTree = "<group>"; };
 		92AA7BF01B88F027002736E7 /* Commitd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Commitd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92AA7BF41B88F027002736E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92AA7BF51B88F027002736E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92A2DEE71B8BDE69008EE29C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				92AA7BFA1B88F027002736E7 /* ViewController.swift */,
+				92A2DEE51B8BDE5F008EE29C /* SportSelectionViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		92AA7BE71B88F027002736E7 = {
 			isa = PBXGroup;
 			children = (
@@ -80,7 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				92AA7BF51B88F027002736E7 /* AppDelegate.swift */,
-				92AA7BFA1B88F027002736E7 /* ViewController.swift */,
+				92A2DEE71B8BDE69008EE29C /* Views */,
 				92AA7BFC1B88F027002736E7 /* Main.storyboard */,
 				92AA7BFF1B88F027002736E7 /* Images.xcassets */,
 				92AA7C011B88F027002736E7 /* LaunchScreen.xib */,
@@ -217,6 +228,7 @@
 			files = (
 				92AA7BFB1B88F027002736E7 /* ViewController.swift in Sources */,
 				92AA7BF61B88F027002736E7 /* AppDelegate.swift in Sources */,
+				92A2DEE61B8BDE5F008EE29C /* SportSelectionViewController.swift in Sources */,
 				92AA7BF91B88F027002736E7 /* Commitd.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +427,7 @@
 				92AA7C141B88F028002736E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		92AA7C151B88F028002736E7 /* Build configuration list for PBXNativeTarget "CommitdTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +436,7 @@
 				92AA7C171B88F028002736E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

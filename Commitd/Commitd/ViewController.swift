@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let sportSelectionViewController = SportSelectionViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,10 +45,12 @@ class ViewController: UIViewController {
     
     func loginWithFacebook() {
         println("Login with Facebook")
+        self.navigationController?.pushViewController(sportSelectionViewController, animated: true)
     }
     
     func loginWithTwitter() {
         println("Login with Twitter")
+        self.navigationController?.pushViewController(sportSelectionViewController, animated: true)
     }
 }
 
