@@ -15,6 +15,13 @@
 		92AA7C001B88F027002736E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92AA7BFF1B88F027002736E7 /* Images.xcassets */; };
 		92AA7C031B88F027002736E7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92AA7C011B88F027002736E7 /* LaunchScreen.xib */; };
 		92AA7C0F1B88F027002736E7 /* CommitdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA7C0E1B88F027002736E7 /* CommitdTests.swift */; };
+		92D1A1CF1B8E6A42003933F7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D1A1CE1B8E6A42003933F7 /* SearchViewController.swift */; };
+		92D1A1D11B8E6B62003933F7 /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D1A1D01B8E6B62003933F7 /* ReviewsViewController.swift */; };
+		92D1A1D31B8E6E86003933F7 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D1A1D21B8E6E86003933F7 /* NotificationsViewController.swift */; };
+		92D1A1D51B8E7061003933F7 /* TrainerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D1A1D41B8E7061003933F7 /* TrainerDetailsViewController.swift */; };
+		92D1A1D71B8E7289003933F7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D1A1D61B8E7289003933F7 /* ProfileViewController.swift */; };
+		92D1A1D91B8E75FB003933F7 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D1A1D81B8E75FB003933F7 /* ScheduleViewController.swift */; };
+		92D1A1DB1B8E7603003933F7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D1A1DA1B8E7603003933F7 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +47,13 @@
 		92AA7C081B88F027002736E7 /* CommitdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommitdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92AA7C0D1B88F027002736E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92AA7C0E1B88F027002736E7 /* CommitdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitdTests.swift; sourceTree = "<group>"; };
+		92D1A1CE1B8E6A42003933F7 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		92D1A1D01B8E6B62003933F7 /* ReviewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
+		92D1A1D21B8E6E86003933F7 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		92D1A1D41B8E7061003933F7 /* TrainerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainerDetailsViewController.swift; sourceTree = "<group>"; };
+		92D1A1D61B8E7289003933F7 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		92D1A1D81B8E75FB003933F7 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		92D1A1DA1B8E7603003933F7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +79,13 @@
 			children = (
 				92AA7BFA1B88F027002736E7 /* ViewController.swift */,
 				92A2DEE51B8BDE5F008EE29C /* SportSelectionViewController.swift */,
+				92D1A1CE1B8E6A42003933F7 /* SearchViewController.swift */,
+				92D1A1D01B8E6B62003933F7 /* ReviewsViewController.swift */,
+				92D1A1D81B8E75FB003933F7 /* ScheduleViewController.swift */,
+				92D1A1D21B8E6E86003933F7 /* NotificationsViewController.swift */,
+				92D1A1D61B8E7289003933F7 /* ProfileViewController.swift */,
+				92D1A1D41B8E7061003933F7 /* TrainerDetailsViewController.swift */,
+				92D1A1DA1B8E7603003933F7 /* SettingsViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -226,9 +247,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D1A1CF1B8E6A42003933F7 /* SearchViewController.swift in Sources */,
 				92AA7BFB1B88F027002736E7 /* ViewController.swift in Sources */,
+				92D1A1DB1B8E7603003933F7 /* SettingsViewController.swift in Sources */,
 				92AA7BF61B88F027002736E7 /* AppDelegate.swift in Sources */,
+				92D1A1D51B8E7061003933F7 /* TrainerDetailsViewController.swift in Sources */,
 				92A2DEE61B8BDE5F008EE29C /* SportSelectionViewController.swift in Sources */,
+				92D1A1D91B8E75FB003933F7 /* ScheduleViewController.swift in Sources */,
+				92D1A1D11B8E6B62003933F7 /* ReviewsViewController.swift in Sources */,
+				92D1A1D71B8E7289003933F7 /* ProfileViewController.swift in Sources */,
+				92D1A1D31B8E6E86003933F7 /* NotificationsViewController.swift in Sources */,
 				92AA7BF91B88F027002736E7 /* Commitd.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

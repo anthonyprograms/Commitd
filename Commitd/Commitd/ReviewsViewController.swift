@@ -1,28 +1,29 @@
 //
-//  SportSelectionViewController.swift
+//  ReviewsViewController.swift
 //  Commitd
 //
-//  Created by Anthony Williams on 8/24/15.
+//  Created by Anthony Williams on 8/26/15.
 //  Copyright (c) 2015 Anthony Williams. All rights reserved.
 //
 
 import UIKit
 
-class SportSelectionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ReviewsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var tableView = UITableView()
-    var sports = ["Basketball", "Football", "Soccer"]
+    var reviews = ["Best trainer of all time", "Coolest dude I've ever met", "Wouldn't want any other trainer"]
     
     override func viewDidLoad() {
 //        super.viewDidLoad()
-        
+
         self.view.backgroundColor = UIColor.whiteColor()
+        self.title = "Reviews"
         
         self.tableView.frame = view.frame
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.bounces = false
-        self.tableView.rowHeight = 50
+        self.tableView.rowHeight = 200
         self.tableView.separatorColor = UIColor( red: CGFloat(190/255.0), green: CGFloat(50/255.0), blue: CGFloat(0/255.0), alpha: CGFloat(0.7))
         self.tableView.backgroundColor = UIColor.clearColor()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -30,13 +31,13 @@ class SportSelectionViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.navigationBarHidden = false
     }
-
+    
     // MARK: Table View Data Source
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sports.count
+        return reviews.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -46,26 +47,10 @@ class SportSelectionViewController: UIViewController, UITableViewDataSource, UIT
         
         cell.textLabel?.textColor = UIColor.whiteColor()
         cell.textLabel?.textAlignment = .Center
-        cell.backgroundColor = UIColor( red: CGFloat(0), green: CGFloat(0.8), blue: CGFloat(0.55), alpha: CGFloat(1.0))
+        cell.backgroundColor = UIColor( red: CGFloat(0), green: CGFloat(0.5), blue: CGFloat(0.7), alpha: CGFloat(1.0))
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 22)
-        cell.textLabel?.text = sports[indexPath.row]
+        cell.textLabel?.text = reviews[indexPath.row]
         
         return cell
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let tabBarController = UITabBarController()
-        let search = SearchViewController()
-        let notifications = NotificationsViewController()
-        let profile = ProfileViewController()
-        let controllers = [search,notifications,profile]
-        tabBarController.viewControllers = controllers
-        
-//        let firstImage = UIImage(named: "temp")
-        
-        search.tabBarItem = UITabBarItem(title: "Search", image: nil, tag: 1)
-        notifications.tabBarItem = UITabBarItem(title: "Notifications", image: nil, tag:2)
-        profile.tabBarItem = UITabBarItem(title: "Search", image: nil, tag: 3)
-        self.navigationController?.pushViewController(tabBarController, animated: true)
     }
 }
