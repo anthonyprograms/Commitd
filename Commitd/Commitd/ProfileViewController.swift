@@ -11,6 +11,7 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     let settingsViewController = SettingsViewController()
+    let trainerDetailsViewController = TrainerDetailsViewController()
     
     override func viewDidLoad() {
 //        super.viewDidLoad()
@@ -18,12 +19,23 @@ class ProfileViewController: UIViewController {
         self.view.backgroundColor = UIColor.whiteColor()
         self.title = "Profile"
         
-        var settingsButton = UIBarButtonItem(title: "Settings", style: UIBarButtonItemStyle.Plain, target: self, action: "settingsButtonPressed")
-        self.navigationController?.navigationItem.rightBarButtonItem = settingsButton
+        // Settings Button
+        let settingsButton = UIButton(frame: CGRectMake(self.view.frame.size.width-85, 20, 80, 30))
+        settingsButton.setTitle("Settings", forState: .Normal)
+        settingsButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        settingsButton.addTarget(self, action: "settingsButtonPressed", forControlEvents: .TouchUpInside)
+        settingsButton.titleLabel?.textAlignment = .Right
+        self.view.addSubview(settingsButton)
+
+        // Trainer Button
+        let trainerButton = UIButton(frame: CGRectMake(5, 20, 80, 30))
+        trainerButton.setTitle("Trainer", forState: .Normal)
+        trainerButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        trainerButton.addTarget(self, action: "trainerButtonPressed", forControlEvents: .TouchUpInside)
+        trainerButton.titleLabel?.textAlignment = .Left
+        self.view.addSubview(trainerButton)
         
-        var trainerButton = UIBarButtonItem(title: "Trainer", style: UIBarButtonItemStyle.Plain, target: self, action: "trainerButtonPressed")
-        self.navigationController?.navigationItem.leftBarButtonItem = trainerButton
-        
+        // Profile Image
         var profileImage:UIImage = UIImage(named: "temp")!
         var profileImageView = UIImageView(image: profileImage)
         profileImageView.frame = CGRectMake(0, 0, 2*self.view.frame.size.width/5, 2*self.view.frame.size.width/5)
@@ -31,15 +43,30 @@ class ProfileViewController: UIViewController {
         profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2
         profileImageView.layer.masksToBounds = true
         self.view.addSubview(profileImageView)
+        
+        // Name
+        
+        // Age
+        
+        // Rating
+        
+        // Reviews
+        
+        // Weekly Schedule
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = false
+//        self.navigationItem.hidesBackButton = true
+        self.navigationController!.navigationBarHidden = true
     }
     
     // MARK: Button Actions
     
     func settingsButtonPressed(){
         self.navigationController?.pushViewController(settingsViewController, animated: true)
+    }
+    
+    func trainerButtonPressed(){
+        self.navigationController?.pushViewController(trainerDetailsViewController, animated: true)
     }
 }

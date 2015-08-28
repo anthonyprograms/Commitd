@@ -23,11 +23,15 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.bounces = false
-        self.tableView.rowHeight = 80
+        self.tableView.rowHeight = 60
         self.tableView.separatorColor = UIColor( red: CGFloat(190/255.0), green: CGFloat(50/255.0), blue: CGFloat(0/255.0), alpha: CGFloat(0.7))
         self.tableView.backgroundColor = UIColor.clearColor()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.view.addSubview(self.tableView)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
     }
     
     // MARK: Table View Data Source
@@ -41,7 +45,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         cell.selectionStyle = .None
         
-        cell.textLabel?.textColor = UIColor.whiteColor()
+        cell.textLabel?.textColor = UIColor.blackColor()
         cell.textLabel?.textAlignment = .Left
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 18)
         cell.textLabel?.text = settings[indexPath.row]

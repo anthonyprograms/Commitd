@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92080DA41B901A670002F302 /* NextTrainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92080DA31B901A670002F302 /* NextTrainerViewController.swift */; };
 		92A2DEE61B8BDE5F008EE29C /* SportSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2DEE51B8BDE5F008EE29C /* SportSelectionViewController.swift */; };
 		92AA7BF61B88F027002736E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA7BF51B88F027002736E7 /* AppDelegate.swift */; };
 		92AA7BF91B88F027002736E7 /* Commitd.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92AA7BF71B88F027002736E7 /* Commitd.xcdatamodeld */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		92080DA31B901A670002F302 /* NextTrainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextTrainerViewController.swift; sourceTree = "<group>"; };
 		92A2DEE51B8BDE5F008EE29C /* SportSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportSelectionViewController.swift; sourceTree = "<group>"; };
 		92AA7BF01B88F027002736E7 /* Commitd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Commitd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92AA7BF41B88F027002736E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				92D1A1D21B8E6E86003933F7 /* NotificationsViewController.swift */,
 				92D1A1D61B8E7289003933F7 /* ProfileViewController.swift */,
 				92D1A1D41B8E7061003933F7 /* TrainerDetailsViewController.swift */,
+				92080DA31B901A670002F302 /* NextTrainerViewController.swift */,
 				92D1A1DA1B8E7603003933F7 /* SettingsViewController.swift */,
 			);
 			name = Views;
@@ -248,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92D1A1CF1B8E6A42003933F7 /* SearchViewController.swift in Sources */,
+				92080DA41B901A670002F302 /* NextTrainerViewController.swift in Sources */,
 				92AA7BFB1B88F027002736E7 /* ViewController.swift in Sources */,
 				92D1A1DB1B8E7603003933F7 /* SettingsViewController.swift in Sources */,
 				92AA7BF61B88F027002736E7 /* AppDelegate.swift in Sources */,

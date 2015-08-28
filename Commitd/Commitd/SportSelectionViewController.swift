@@ -60,12 +60,15 @@ class SportSelectionViewController: UIViewController, UITableViewDataSource, UIT
         let profile = ProfileViewController()
         let controllers = [search,notifications,profile]
         tabBarController.viewControllers = controllers
+        tabBarController.tabBar.backgroundColor = UIColor(red: 0, green: 0.8, blue: 0.55, alpha: 1)
         
-//        let firstImage = UIImage(named: "temp")
+        let searchImage = UIImage(named: "search")
+        let notificationsImage = UIImage(named: "notifications")
+        let profileImage = UIImage(named: "profile")
         
-        search.tabBarItem = UITabBarItem(title: "Search", image: nil, tag: 1)
-        notifications.tabBarItem = UITabBarItem(title: "Notifications", image: nil, tag:2)
-        profile.tabBarItem = UITabBarItem(title: "Search", image: nil, tag: 3)
+        search.tabBarItem = UITabBarItem(title: "Search", image: searchImage, tag: 1)
+        notifications.tabBarItem = UITabBarItem(title: "Notifications", image: notificationsImage, tag:2)
+        profile.tabBarItem = UITabBarItem(title: "Search", image: notificationsImage, tag: 3)
         self.navigationController?.pushViewController(tabBarController, animated: true)
     }
 }
