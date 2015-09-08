@@ -8,39 +8,29 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SettingsViewController: UITableViewController {
 
-    var tableView = UITableView()
-    var settings = ["Default Sport","Card Verification","Log Out"]
+    var settings = ["Default Location","Default Sport","Card Verification","Log Out"]
     
     override func viewDidLoad() {
-//        super.viewDidLoad()
+        super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.whiteColor()
-        self.title = "Settings"
+        navigationItem.title = "Settings"
         
-        self.tableView.frame = view.frame
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.bounces = false
         self.tableView.rowHeight = 60
-        self.tableView.separatorColor = UIColor( red: CGFloat(190/255.0), green: CGFloat(50/255.0), blue: CGFloat(0/255.0), alpha: CGFloat(0.7))
-        self.tableView.backgroundColor = UIColor.clearColor()
+        self.tableView.backgroundColor = UIColor.whiteColor()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.view.addSubview(self.tableView)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = false
     }
     
     // MARK: Table View Data Source
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return settings.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
         
         cell.selectionStyle = .None
@@ -53,7 +43,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
     }
 

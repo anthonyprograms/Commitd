@@ -76,13 +76,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		92A2DEE71B8BDE69008EE29C /* Views */ = {
+		92A2DEE71B8BDE69008EE29C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				92AA7BFA1B88F027002736E7 /* ViewController.swift */,
-				92A2DEE51B8BDE5F008EE29C /* SportSelectionViewController.swift */,
 				92D1A1CE1B8E6A42003933F7 /* SearchViewController.swift */,
 				92D1A1D01B8E6B62003933F7 /* ReviewsViewController.swift */,
+				92A2DEE51B8BDE5F008EE29C /* SportSelectionViewController.swift */,
 				92D1A1D81B8E75FB003933F7 /* ScheduleViewController.swift */,
 				92D1A1D21B8E6E86003933F7 /* NotificationsViewController.swift */,
 				92D1A1D61B8E7289003933F7 /* ProfileViewController.swift */,
@@ -90,7 +90,7 @@
 				92080DA31B901A670002F302 /* NextTrainerViewController.swift */,
 				92D1A1DA1B8E7603003933F7 /* SettingsViewController.swift */,
 			);
-			name = Views;
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		92AA7BE71B88F027002736E7 = {
@@ -115,7 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				92AA7BF51B88F027002736E7 /* AppDelegate.swift */,
-				92A2DEE71B8BDE69008EE29C /* Views */,
+				92A2DEE71B8BDE69008EE29C /* View Controllers */,
 				92AA7BFC1B88F027002736E7 /* Main.storyboard */,
 				92AA7BFF1B88F027002736E7 /* Images.xcassets */,
 				92AA7C011B88F027002736E7 /* LaunchScreen.xib */,

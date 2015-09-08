@@ -8,67 +8,42 @@
 
 import UIKit
 
-class SportSelectionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SportSelectionViewController: UITableViewController {
 
-    var tableView = UITableView()
-    var sports = ["Basketball", "Football", "Soccer"]
+    var sports = ["Baseball", "Basketball", "Football", "Golf", "Soccer", "Swimming", "Tennis", "Volleyball", "Water Polo"]
     
     override func viewDidLoad() {
-//        super.viewDidLoad()
+        super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.whiteColor()
-        
-        self.tableView.frame = view.frame
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.bounces = false
         self.tableView.rowHeight = 50
-        self.tableView.separatorColor = UIColor( red: CGFloat(190/255.0), green: CGFloat(50/255.0), blue: CGFloat(0/255.0), alpha: CGFloat(0.7))
-        self.tableView.backgroundColor = UIColor.clearColor()
+        self.tableView.backgroundColor = UIColor.whiteColor()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.view.addSubview(self.tableView)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = true
     }
 
     // MARK: Table View Data Source
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sports.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
         
         cell.selectionStyle = .None
         
-        cell.textLabel?.textColor = UIColor.whiteColor()
+        cell.textLabel?.textColor = UIColor.blackColor()
         cell.textLabel?.textAlignment = .Center
-        cell.backgroundColor = UIColor( red: CGFloat(0), green: CGFloat(0.8), blue: CGFloat(0.55), alpha: CGFloat(1.0))
+        cell.backgroundColor = UIColor.clearColor()
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 22)
         cell.textLabel?.text = sports[indexPath.row]
         
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let tabBarController = UITabBarController()
-        let search = SearchViewController()
-        let notifications = NotificationsViewController()
-        let profile = ProfileViewController()
-        let controllers = [search,notifications,profile]
-        tabBarController.viewControllers = controllers
-        tabBarController.tabBar.backgroundColor = UIColor(red: 0, green: 0.8, blue: 0.55, alpha: 1)
-        
-        let searchImage = UIImage(named: "search")
-        let notificationsImage = UIImage(named: "notifications")
-        let profileImage = UIImage(named: "profile")
-        
-        search.tabBarItem = UITabBarItem(title: "Search", image: searchImage, tag: 1)
-        notifications.tabBarItem = UITabBarItem(title: "Notifications", image: notificationsImage, tag:2)
-        profile.tabBarItem = UITabBarItem(title: "Search", image: notificationsImage, tag: 3)
-        self.navigationController?.pushViewController(tabBarController, animated: true)
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
 }

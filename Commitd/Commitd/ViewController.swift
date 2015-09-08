@@ -9,48 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    let sportSelectionViewController = SportSelectionViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor(red: 0/255, green: 175/255, blue: 130/255, alpha: 1)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = true
-        self.view.backgroundColor = UIColor(red: 46/255, green: 184/255, blue: 230/255, alpha: 1)
-        
-        // Title Label
-        let title = UILabel(frame: CGRectMake(0, 30, self.view.frame.size.width, self.view.frame.size.height/2))
-        title.text = "C"
-        title.textColor = UIColor.whiteColor()
-        title.textAlignment = .Center
-        title.font = UIFont(name: "Helvetica Neue", size: 125)
-        self.view.addSubview(title)
-        
-        // Login With Facebook
-        let facebookButton = UIButton(frame: CGRectMake(20, self.view.frame.size.height-100, self.view.frame.size.width-40, 35))
-        facebookButton.setTitle("Login With Facebook", forState: .Normal)
-        facebookButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
-        facebookButton.titleLabel?.font = UIFont(name: "Helvetica Neue", size: 18)
-        facebookButton.addTarget(self, action: "loginWithFacebook", forControlEvents: .TouchUpInside)
-        self.view.addSubview(facebookButton)
-        
-        // Login With Twitter
-        let twitterButton = UIButton(frame: CGRectMake(20, facebookButton.frame.origin.y+35, self.view.frame.size.width-40, 35))
-        twitterButton.setTitle("Login With Twitter", forState: .Normal)
-        twitterButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
-        twitterButton.titleLabel?.font = UIFont(name: "Helvetica Neue", size: 18)
-        twitterButton.addTarget(self, action: "loginWithTwitter", forControlEvents: .TouchUpInside)
-        self.view.addSubview(twitterButton)
     }
     
-    func loginWithFacebook() {
+    // MARK: Button Actions
+    @IBAction func loginWithFacebook(sender: UIButton) {
         println("Login with Facebook")
-        self.navigationController?.pushViewController(sportSelectionViewController, animated: true)
+        self.performSegueWithIdentifier("UserLoggedIn", sender: self)
     }
     
-    func loginWithTwitter() {
-        println("Login with Twitter")
-        self.navigationController?.pushViewController(sportSelectionViewController, animated: true)
+    @IBAction func loginWithTwitter(sender: UIButton) {
+        println("Login With Twitter")
+        self.performSegueWithIdentifier("UserLoggedIn", sender: self)
     }
 }
-

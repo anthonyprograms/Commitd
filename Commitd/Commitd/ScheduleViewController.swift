@@ -8,66 +8,32 @@
 
 import UIKit
 
-class ScheduleViewController: UIViewController, UIPickerViewDelegate {
+class ScheduleViewController: UIViewController {
 
-    var trainerName:String = String()
-    var rate:String = String()
-    var daysAvailable = ["Monday", "Wednesday", "Friday", "Saturday"]
+//    var trainerName:String = String()
+//    var rate:String = String()
+//    var daysAvailable = ["Monday", "Wednesday", "Friday", "Saturday"]
+    @IBOutlet weak var trainerImage: UIImageView!
     
     override func viewDidLoad() {
-//        super.viewDidLoad()
+        super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.whiteColor()
-        self.title = "Schedule"
+        navigationItem.title = "Schedule Trainer"
         
         // Trainer Image
-        var profileImage:UIImage = UIImage(named: "temp")!
-        var profileImageView = UIImageView(image: profileImage)
-        profileImageView.frame = CGRectMake(0, 60, 2*self.view.frame.size.width/5, 2*self.view.frame.size.width/5)
-        profileImageView.center.x = self.view.frame.size.width/2
-        profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2
-        profileImageView.layer.masksToBounds = true
-        self.view.addSubview(profileImageView)
+        trainerImage.layer.cornerRadius = trainerImage.frame.size.height/2
+        trainerImage.layer.masksToBounds = true
         
         // Trainer's Rate
-        let rateLabel = UILabel(frame: CGRectMake(0, profileImageView.frame.origin.y+profileImageView.frame.size.height+10, self.view.frame.size.width, 50))
-        rateLabel.text = "$15/hr"
-        rateLabel.textColor = UIColor.blackColor()
-        rateLabel.textAlignment = .Center
-        rateLabel.font = UIFont(name: "Helvetica Neue", size: 24)
-        self.view.addSubview(rateLabel)
+//        rateLabel.text = "$15/hr"
+//        rateLabel.font = UIFont(name: "Helvetica Neue", size: 24)
         
-        // Select Day
-        let dayPicker = UIPickerView(frame: CGRectMake(0, rateLabel.frame.origin.y+rateLabel.frame.size.height+10, 2*self.view.frame.size.width/3, 50))
-        dayPicker.center.x = self.view.frame.size.width/2
-        dayPicker.delegate = self
-        dayPicker.backgroundColor = UIColor(red: 0.2, green: 0.4, blue: 0.1, alpha: 1)
-        dayPicker.showsSelectionIndicator = true
-        self.view.addSubview(dayPicker)
+        // Select Day/Time from Table View
         
-        // Select Time
-        let timePicker = UIPickerView(frame: CGRectMake(0, dayPicker.frame.origin.y+dayPicker.frame.size.height+10, 2*self.view.frame.size.width/3, 50))
-        timePicker.center.x = self.view.frame.size.width/2
-        timePicker.delegate = self
-        timePicker.showsSelectionIndicator = true
-        self.view.addSubview(timePicker)
         
         // Request Button
-        let requestButton = UIButton(frame: CGRectMake(0, self.view.frame.size.height-60, self.view.frame.size.width, 60))
-        requestButton.backgroundColor = UIColor(red: 0.85, green: 0.2, blue: 0.3, alpha: 1)
-        requestButton.setTitle("Request", forState: .Normal)
-        requestButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        requestButton.titleLabel?.font = UIFont(name: "Helvetica Neue", size: 26)
-        self.view.addSubview(requestButton)
+//        requestButton.titleLabel?.font = UIFont(name: "Helvetica Neue", size: 26)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = false
-    }
-    
-    // MARK: Picker Data Source
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return daysAvailable[row]
-    }
+    // MARK: Button Actions
 }

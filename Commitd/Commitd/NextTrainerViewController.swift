@@ -8,47 +8,65 @@
 
 import UIKit
 
-class NextTrainerViewController: UIViewController {
+class NextTrainerViewController: UIViewController, UITableViewDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var descriptionBox: UILabel!
+    var words = ["High School Experience", "College Experience", "Pro Experience", "D1 College Experience","anthon","bvcx","234","zcxv","asdf"]
+    var trainerDescription:NSMutableArray = NSMutableArray()
     
     override func viewDidLoad() {
-//        super.viewDidLoad()
-
-        self.view.backgroundColor = UIColor.whiteColor()
-        
-        // Description Label
-        var descriptionLabel = UILabel(frame: CGRectMake(5, 80, self.view.frame.size.width-10, 40))
-        descriptionLabel.text = "Select key words for your description"
-        descriptionLabel.textAlignment = .Center
-        descriptionLabel.textColor = UIColor.blackColor()
-        descriptionLabel.font = UIFont(name: "Helvetica Neue", size: 20)
-        self.view.addSubview(descriptionLabel)
+        super.viewDidLoad()
         
         // Description
-        var description = UITextView(frame: CGRectMake(5, 120, self.view.frame.size.width-10, 150))
-        description.editable = false
-        description.font = UIFont(name: "Helvetica Neue", size: 20)
-        description.text = ""
-        description.layer.borderColor = UIColor.blackColor().CGColor
-        description.layer.borderWidth = 0.5
-        description.layer.masksToBounds = true
-        self.view.addSubview(description)
+        descriptionBox.font = UIFont(name: "Helvetica Neue", size: 18)
+        descriptionBox.text = ""
+        descriptionBox.layer.borderColor = UIColor.blackColor().CGColor
+        descriptionBox.layer.borderWidth = 0.5
+        descriptionBox.layer.masksToBounds = true
         
         // Key Words for Description
-        
+        tableView.delegate = self
+        tableView.backgroundColor = UIColor.whiteColor()
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         // Done Button
         var doneButton = UIButton(frame: CGRectMake(0, self.view.frame.size.height-60, self.view.frame.size.width, 60))
-        doneButton.setTitle("Done", forState: .Normal)
-        doneButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        doneButton.backgroundColor = UIColor(red: 0, green: 0.8, blue: 0.55, alpha: 1)
         doneButton.titleLabel?.font = UIFont(name: "Helvetica Neue", size: 24)
-        doneButton.addTarget(self, action: "doneButtonPressed", forControlEvents: .TouchUpInside)
-        self.view.addSubview(doneButton)
     }
     
     // MARK: Button Actions
     
-    func doneButtonPressed() {
+    @IBAction func donePressed(sender: UIButton) {
+        // Send Data to Parse
+        
+        // Alert that it has been completed
+        
+        // On Alert OK
         self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    // MARK: Table View Data Source
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return words.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
+        
+        cell.selectionStyle = .None
+        
+        cell.textLabel?.textColor = UIColor.blackColor()
+        cell.textLabel?.textAlignment = .Center
+        cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        cell.textLabel?.text = words[indexPath.row]
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        descriptionBox.text = (descriptionBox.text ?? "") + "\(words[indexPath.row]), "
+        trainerDescription.addObject(words[indexPath.row])
     }
 }
